@@ -1,8 +1,11 @@
 # MultiModal FineTuning
 
-## Overall approach
+## High level details
 - Model based on the Llava model approach
 - Dataset used is Instruct 150k dataset with the COCO original images
+
+### Huggingface app for trial (Running on CPU to avoid paying money so very slow)
+https://huggingface.co/spaces/Chintan-Shah/MyMultiModalExperiment
 
 ### Design
 - Phi 3.5 mini instruct model used as an LLM
@@ -42,4 +45,11 @@
   - They were quite complex and needed larger infrastructure so settled for own version
 - Tried training the projection layer directly by comparing the outputs with the text embedding to calcualate loss - Did not work
 - Tried doing cosine similarity of the sentence for loss calculations - Did not work
+
+### Outputs (Initial - Updated model later for further improvement)
+
+- ![image](https://github.com/user-attachments/assets/10eb42a3-f363-4fdc-9276-9c58dcff119a)
+- ![image](https://github.com/user-attachments/assets/0e8ed752-eaa9-483d-ad89-e9b7d4e002f7)
+  - Audio is saying “It's 11 o'clock.”
+![image](https://github.com/user-attachments/assets/fbbc8077-12fc-4696-a633-ec195c5f1316)
 
