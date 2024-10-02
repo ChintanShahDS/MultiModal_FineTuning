@@ -148,13 +148,34 @@ Could not estimate the number of tokens of the input, floating-point operations 
 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6000/6000 [3:12:25<00:00,  1.92s/it]
 ```
 
-### Tensorboard logs (To be updated)
+### Tensorboard logs
+
+- Train logs for first fine tuning
+  - ![image](https://github.com/user-attachments/assets/d34d80b2-57c6-46d4-a9b5-2325c2a91b04)
+- Train logs for the second round of fine tuning on top of fine tuned model
+  - ![image](https://github.com/user-attachments/assets/f3a35e2f-31e7-4eb9-b038-48493d1273d4)
+- Train logs for the third round of fine tuning on top of fine tuned model
+  - ![image](https://github.com/user-attachments/assets/e3728f04-d4dc-4100-9912-ad93906fdead)
+- Fine tuning of only the projection layer and freezing the Phi3.5 model
+  - ![image](https://github.com/user-attachments/assets/e440b3ed-8d07-402c-a1a3-a3e42bfce41f)
+- Fine tuning the Projection + Phi3.5 QLora on the tuned Projection layer
+  - ![image](https://github.com/user-attachments/assets/bd5467a1-fce7-4233-9c94-5baa2994fb0f)
 
 
-### Outputs (Initial - Updated model later for further improvement - Will try to update more outputs later on)
+### Outputs (Includes output from the first model and the second fine tuned model)
 
+#### First model
 ![image](https://github.com/user-attachments/assets/10eb42a3-f363-4fdc-9276-9c58dcff119a)
 
 ![image](https://github.com/user-attachments/assets/0e8ed752-eaa9-483d-ad89-e9b7d4e002f7)
 
 ![image](https://github.com/user-attachments/assets/fbbc8077-12fc-4696-a633-ec195c5f1316)
+
+#### After second round of fine tuning
+![image](https://github.com/user-attachments/assets/aaa0902d-2d53-4594-a701-510986705145)
+
+![image](https://github.com/user-attachments/assets/a9367768-8ee6-4ee8-b001-118a49d20844)
+
+![image](https://github.com/user-attachments/assets/a2b19668-8c8d-4e81-9fd1-3ebcdced6f37)
+
+
