@@ -1,15 +1,21 @@
 # MultiModal FineTuning
 
 ## High level details
-- Model based on the Llava model approach
+- Project was to make a multi-modal LLM that can take Text, Image and Audio as inputs and gives Text output based on the Question asked
 - Dataset used is Instruct 150k dataset with the COCO original images
+- Model based on the Llava model approach where
+  - CLIP pretrained model used to get Image embeddings that have been adjusted for text
+  - Projection layer before the Phi3.5 model that will be able to convert the CLIP Image embeddings to something that Phi model understands
+  - Phi3.5_mini_instruct model used as LLM and fine tuned using QLora to understand the image embeddings
+- Whisper used to convert audio to text that was directly passed to the Phi3.5 layer along with any other textual context and the question
+- Model deployed on Huggingface allowing inputs to be sent as Image, Audio and / or Text along with a Question to get an Output based on these inputs and the Question
 
 ### Huggingface app for trial (Running on CPU to avoid paying money so very slow)
 https://huggingface.co/spaces/Chintan-Shah/MyMultiModalExperiment
 
 ### File details
 - imageToClipEmbedding.py: Initial try when I dumped clip embeddings for each image into a file. Dumped the hidden layer outputs in this case. But used direct Clip embeddings in the later models.
-- MultiModalFull_Inference_C1.py - Main Inference file where Projection layer and Phi 3.5 QLora trained with get_image_features (1 x 512). Also used the output of the fine tuned model here and passed it to the base Phi3.5 model to get the language correct.
+- MultiModalFull_Inference_C1.py - Main Inference file where Projection layer and Phi 3.5 QLora trained with get_image_features (1 x 512). Also used the output of the fine tuned model here and passed it to the base Phi3.5 model to get the language correct. This is a Gradio app in itself that can be used for testing.
 - MultiModalFull_Inference.py - Inference file where Projection layer and Phi 3.5 trained with last layer embeddings from CLIP model (50 x 768).
 - QLora_FineTuning_Phi3.py - Initial fine tuning file where training was done using the last layer (50 x 768). These has patches and might be good for images with many things. Though this file was used for multiple trainings and trials.
 - QLora_FineTuning_Phi3_C1.py - Main fine tuning file where Projection layer and Phi 3.5 QLora trained with get_image_features (1 x 512). This is what is deployed on huggingface
