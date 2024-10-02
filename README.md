@@ -64,6 +64,9 @@ https://huggingface.co/spaces/Chintan-Shah/MyMultiModalExperiment
 - Tried doing cosine similarity of the sentence for loss calculations - Did not work
 
 ### Things that could be done further
+- Training done only with 6000 steps and not even 1 epoch (1 epoch = 40847 steps): Need to further fine tune on this data (WIP)
+- Understanding of certain types of objects like Giraffe, Zebra. Also able to get only a couple of parts of the image and not a lot of details. Need to work on getting these things to be understood by the model. May need to think about curating the dataset to make them understand these
+- Should try to check which layers should be used for the Phi 3.5 fine tuning and which not. Maybe some layers at the start are more important to be fine tuned than the attention layers and should be included.
 - Train with a more deep projections layer
 - Add image patches along with the full image by resizing and getting embeddings to get better results
 - Check the text generation aspect of Phi 3.5 and the words not forming fully in the outputs
@@ -145,7 +148,10 @@ Could not estimate the number of tokens of the input, floating-point operations 
 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6000/6000 [3:12:25<00:00,  1.92s/it]
 ```
 
-### Outputs (Initial - Updated model later for further improvement)
+### Tensorboard logs (To be updated)
+
+
+### Outputs (Initial - Updated model later for further improvement - Will try to update more outputs later on)
 
 ![image](https://github.com/user-attachments/assets/10eb42a3-f363-4fdc-9276-9c58dcff119a)
 
